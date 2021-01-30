@@ -1,0 +1,124 @@
+page {
+  background-color: #f7f8fa;
+}
+.container {
+  width: 100%;
+}
+.container .sales {
+  background: linear-gradient(133deg, #f7bf00, #ed8b00 98%);
+  width: 100%;
+}
+.container .sales .header {
+  width: 100%;
+}
+.container .sales .header .title {
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+}
+.container .sales .header .title .imgback {
+  width: 80rpx;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8rpx;
+}
+.container .sales .header .title .imgback .back {
+  width: 54rpx;
+  height: 54rpx;
+}
+.container .sales .header .title .bacjk {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36rpx;
+  color: #fff;
+  width: 60rpx;
+  height: 88rpx;
+  padding-right: 80rpx;
+  box-sizing: border-box;
+}
+.container .sales .kefu {
+  padding: 32rpx;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container .sales .kefu image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.container .sales .kefu .kefu_tie {
+  margin-left: 30rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+.container .sales .stat_lis {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.container .sales .stat_lis .staues {
+  padding: 32rpx 0 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 16rpx 16rpx 0 0;
+  display: flex;
+  align-items: center;
+}
+.container .sales .stat_lis .staues .stautsItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container .sales .stat_lis .staues .stautsItem image {
+  width: 80rpx;
+  height: 80rpx;
+}
+.container .sales .stat_lis .staues .stautsItem .itemname {
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #3D444C;
+}
+.container .sales .stat_lis .staues .stautsItem .buttonShare {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  z-index: 5;
+  background: transparent;
+}
+.container .downlist {
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 32rpx 32rpx;
+  box-sizing: border-box;
+}
+.container .downlist .iox {
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  border-radius: 16rpx;
+}
+.container .downlist .iox .itembtn {
+  width: 100%;
+  font-size: 28rpx;
+  color: #333333;
+  padding: 20rpx 32rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.container .downlist .iox .itembtn:last-child {
+  border: none;
+}

@@ -1,0 +1,101 @@
+<view class="container">
+  <view class="bigboxs">
+    <view class="header" style="padding-top:{{statusTop}}px">
+      <view class="title">我的</view>
+    </view>
+    <view class="userinfo">
+      <view class="tophead">
+        <view class="left_head" bindtap="goToLogin">
+          <image src="{{userInfo.avatar != ''?  userInfo.avatar :'' }}" />
+          <view class="head_name">{{userInfo.nickname !='' ?userInfo.nickname :'登录/注册'}}</view>
+        </view>
+        <view class="right_head">
+          <view class="student" catchtap="GOapprove">
+            <view class="stu_name">学生实名认证</view>
+            <image src="{{imagesUrl}}/icon_more.png" />
+          </view>
+        </view>
+      </view>
+      <view class="rules" catchtap="integralRule">
+        <image src="{{imagesUrl}}/icon_question.png" />
+        <view class="rules_name">积分规则</view>
+      </view>
+      <view class="pop">
+        <view class="felx felx2" catchtap="gomyCoupon">
+          <view class="number">{{userInfo.coupon_num != '' ?  userInfo.coupon_num : 0}}</view>
+          <view class="number_name">优惠券</view>
+        </view>
+        <view class="felx" catchtap="gomyIntegration">
+          <view class="number">{{userInfo.score != '' ?  userInfo.score : 0}}</view>
+          <view class="number_name">积分</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="order">
+    <view class="banner" wx:if="{{userInfo.center_image !=''}}">
+      <image src="{{userInfo.center_image}}" />
+    </view>
+    <view class="order_list">
+      <view class="title_order">全部订单</view>
+      <view class="order_cun">
+        <view class="box1" bindtap="goOrder" data-count="0">
+          <image src="{{imagesUrl}}/icon_all@2x.png" />
+          <view class="b_name">全部</view>
+          <view class="count" wx:if="{{userInfo.wait_use_num != 0}}">
+            {{userInfo.wait_use_num}}
+          </view>
+        </view>
+        <view class="box1" bindtap="goOrder" data-count="1">
+          <image src="{{imagesUrl}}/icon_daifu@2x.png" />
+          <view class="b_name">待付款</view>
+          <view class="count" wx:if="{{userInfo.no_pay_num != 0}}">{{userInfo.no_pay_num}}</view>
+        </view>
+        <view class="box1" bindtap="goOrder" data-count="2">
+          <image src="{{imagesUrl}}/icon_daishi@2x.png" />
+          <view class="b_name">待使用</view>
+          <view class="count" wx:if="{{userInfo.wait_use_num != 0}}">
+            {{userInfo.wait_use_num}}
+          </view>
+        </view>
+        <view class="box1" bindtap="goOrder" data-count="3">
+          <image src="{{imagesUrl}}/icon_pingjia@2x.png" />
+          <view class="b_name">待评价</view>
+          <view class="count" wx:if="{{userInfo.wati_comment_num != 0}}">
+            {{userInfo.wati_comment_num}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="downlise">
+      <view class="listitem" bindtap="goStoreEnter">
+        <view class="li_img">
+          <image src="{{imagesUrl}}/icon_shop@2x.png" />
+          <view class="li_name">商家入驻</view>
+        </view>
+        <image src="{{imagesUrl}}/icon_more.png" class="arrowimg" />
+      </view>
+      <view class="listitem" bindtap="gomyAddress">
+        <view class="li_img">
+          <image src="{{imagesUrl}}/icon_loc@2x.png" />
+          <view class="li_name">我的地址</view>
+        </view>
+        <image src="{{imagesUrl}}/icon_more.png" class="arrowimg" />
+      </view>
+      <view class="listitem" bindtap="gomyafterSales">
+        <view class="li_img">
+          <image src="{{imagesUrl}}/icon_kefu@2x.png" />
+          <view class="li_name">售后和客服</view>
+        </view>
+        <image src="{{imagesUrl}}/icon_more.png" class="arrowimg" />
+      </view>
+      <!-- <view class="listitem" bindtap="getSubscribe">
+        <view class="li_img">
+          <image src="{{imagesUrl}}/icon_kefu@2x.png" />
+          <view class="li_name">订阅消息</view>
+        </view>
+        <image src="{{imagesUrl}}/icon_more.png" class="arrowimg" />
+      </view> -->
+    </view>
+  </view>
+</view>

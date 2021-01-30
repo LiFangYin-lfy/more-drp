@@ -1,0 +1,54 @@
+<view class="container">
+  <block wx:if="{{listItem.length !=0}}">
+    <view class="listIten" wx:for="{{listItem}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <view class="top_li">
+        <view class="lef_cont">
+          <image src="{{imagesUrl}}/img_kauquan@2x.png" class="ka_img" />
+          <view class="ld">
+            <view class="pt">
+              <view class="pt_icon">￥</view>
+              <view class="pt_price" wx:if="{{item.type==1}}">{{item.surplus}}</view>
+              <view class="pt_price" wx:else>{{item.minus}}</view>
+            </view>
+            <view class="lef_name" wx:if="{{item.type==1}}">抵扣券</view>
+            <view class="lef_name" wx:if="{{item.type==2}}">满{{item.min}}减券</view>
+            <view class="lef_name" wx:if="{{item.type==3}}">店铺优惠券</view>
+            <view class="lef_name" wx:if="{{item.type==4}}">会员用户专享</view>
+          </view>
+        </view>
+        <view class="rgt">
+          <view class="r_title title_content1" wx:if="{{item.store_id==0}}">全平台券</view>
+          <view class="r_title title_content1" wx:if="{{item.store_id==1}}">
+            {{item.store.name}}
+          </view>
+          <view class="r_tim2">{{item.description}}</view>
+          <view class="lef_time">有效期至{{item.end_time}}</view>
+          <view class="down_use">
+            <view class="r_down" bindtap="openIsShow" data-index="{{index}}">
+              <view class="r_text">详细信息</view>
+              <view class="imgbtn">
+                <image src="{{imagesUrl}}/icon_kaquan_down@2x.png" wx:if="{{item.is_show == 0}}" />
+                <image src="{{imagesUrl}}/icon_kaquan_up@2x.png" wx:else />
+              </view>
+            </view>
+            <view class="r_use" catchtap="gotouse" data-idt="{{item.store_id}}" wx:if="{{item.status==1}}">
+              立即使用
+            </view>
+            <view class="r_use" wx:if="{{item.status==2}}">已使用</view>
+            <view class="r_use" wx:if="{{item.status==3}}">已失效</view>
+          </view>
+        </view>
+      </view>
+      <view class="openlist" wx:if="{{item.is_show == 1}}">
+        <view class="open_title">使用说明</view>
+        <view class="opentext">{{item.description}}</view>
+      </view>
+    </view>
+  </block>
+  <view class="elseList" wx:else>
+    <view class="kongbox">
+      <image src="{{imagesUrl}}/empty.png" />
+      <view class="c_name">还没有优惠券哦~</view>
+    </view>
+  </view>
+</view>

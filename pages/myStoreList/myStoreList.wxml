@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="else_list">
+    <block wx:for="{{storeList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+      <view class="litItem" catchtap="gostoreItem" data-id="{{item.id}}">
+        <view class="top">
+          <image src="{{item.image}}" />
+          <view class="rgt">
+            <view class="title1 title_content1">{{item.name}}</view>
+            <view class="iims">
+              <image src="{{imagesUrl}}/redStar.png" wx:if="{{item.star >=1 }}" class="lims" />
+              <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+              <image src="{{imagesUrl}}/redStar.png" wx:if="{{item.star >=2 }}" class="lims" />
+              <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+              <image src="{{imagesUrl}}/redStar.png" wx:if="{{item.star >=3 }}" class="lims" />
+              <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+              <image src="{{imagesUrl}}/redStar.png" wx:if="{{item.star >=4 }}" class="lims" />
+              <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+              <image src="{{imagesUrl}}/redStar.png" wx:if="{{item.star >=5 }}" class="lims" />
+              <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+            </view>
+            <view class="title3 ">已售 {{item.sales}}</view>
+          </view>
+        </view>
+        <view class="bens">
+          <view class="bens_name" wx:if="{{item.is_self == 1}}" catchtap="clickDel" data-settled_id="{{item.id}}">
+            移除
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="litItem" catchtap="gostoreItem" data-id="{{self.id}}" wx:if="{{self != ''}}">
+      <view class="top">
+        <image src="{{self.image}}" />
+        <view class="rgt">
+          <view class="title1 title_content1">{{self.name}}</view>
+          <view class="iims">
+            <image src="{{imagesUrl}}/redStar.png" wx:if="{{self.star >=1 }}" class="lims" />
+            <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+            <image src="{{imagesUrl}}/redStar.png" wx:if="{{self.star >=2 }}" class="lims" />
+            <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+            <image src="{{imagesUrl}}/redStar.png" wx:if="{{self.star >=3 }}" class="lims" />
+            <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+            <image src="{{imagesUrl}}/redStar.png" wx:if="{{self.star >=4 }}" class="lims" />
+            <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+            <image src="{{imagesUrl}}/redStar.png" wx:if="{{self.star >=5 }}" class="lims" />
+            <image src="{{imagesUrl}}/huiStar.png" wx:else class="lims" />
+          </view>
+          <view class="title3 ">已售 {{self.sales}}</view>
+        </view>
+      </view>
+      <view class="bens">
+        <view class="bens_name" wx:if="{{self != ''}}" catchtap="clickDel" data-settled_id="{{self.id}}">
+          移除
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

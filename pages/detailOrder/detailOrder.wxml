@@ -1,0 +1,91 @@
+<view class="container">
+  <view class="lists">
+    <view class="top">
+      <view class="let_le">
+        <image src="{{detailOrder.store.image}}" />
+        <view class="top_name  title_content1">{{detailOrder.store.name}}</view>
+      </view>
+      <view class="status_name" wx:if="{{detailOrder.status == 1}}">待付款</view>
+      <view class="status_name" wx:if="{{detailOrder.status == 2}}">待使用</view>
+      <view class="status_name" wx:if="{{detailOrder.status == 3}}">已完成</view>
+    </view>
+    <block wx:if="{{detailOrder.goods.length ==1 }}">
+      <view class="top_content" wx:for="{{detailOrder.goods}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+        <image src="{{item.image}}" />
+        <view class="right_content">
+          <view class="title_name  title_content2">{{item.goods.goods_name}}</view>
+          <view class="title_name  title_content1">{{item.goods_attr}}</view>
+          <view class="downlist">
+            <view class="total_l">共 {{item.total_num}} 件商品</view>
+            <view class="total_l">应付金额：</view>
+            <view class="pt">
+              <view class="pt_icon">￥</view>
+              <view class="pt_price">{{item.goods_price}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="top_conten2t" wx:else>
+      <scroll-view class="scroll_view_H" scroll-x="true" style="width:100%;">
+        <view class="images">
+          <block wx:for="{{detailOrder.goods}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+            <image src="{{item.image}}" />
+          </block>
+        </view>
+      </scroll-view>
+      <view class="downlist">
+        <view class="total_l">共 {{detailOrder.goods.length}} 件商品</view>
+        <view class="total_l">应付金额：</view>
+        <view class="pt">
+          <view class="pt_icon">￥</view>
+          <view class="pt_price">{{detailOrder.pay_price}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="inventory">
+      <view class="box boxm">
+        <view class="le_name">订单编号</view>
+        <view class="le_text">{{detailOrder.order_no}}</view>
+      </view>
+      <view class="box boxm">
+        <view class="le_name">下单时间</view>
+        <view class="le_text">{{detailOrder.creattime_text}}</view>
+      </view>
+      <view class="box boxm">
+        <view class="le_name">商品总额</view>
+        <view class="pt">
+          <view class="pt_icon">￥</view>
+          <view class="pt_price">{{detailOrder.total_price}}</view>
+        </view>
+      </view>
+      <view class="box boxm" wx:if="{{detailOrder.coupon_price !=0}}">
+        <view class="le_name">优惠金额</view>
+        <view class="pt">
+          <view class="pt_icon">￥</view>
+          <view class="pt_price">{{detailOrder.coupon_price}}</view>
+        </view>
+      </view>
+      <view class="box boxm">
+        <view class="le_name">实付总额</view>
+        <view class="pt">
+          <view class="pt_icon">￥</view>
+          <view class="pt_price">{{detailOrder.pay_price}}</view>
+        </view>
+      </view>
+      <view class="box boz" wx:if="{{detailOrder.status!=1}}">
+        <view class="le_name">券码</view>
+        <view class="le_text">
+          <image src="{{qrcode}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tnb" wx:if="{{detailOrder.is_store == 1 &&  detailOrder.status==2}}">
+    <view class="btns_btn">
+      <button class="cancel_btn" disabled="{{disTrue}}" data-id="{{detailOrder.id}}" bindtap="trueCancel">
+        确认核销
+      </button>
+    </view>
+  </view>
+</view>

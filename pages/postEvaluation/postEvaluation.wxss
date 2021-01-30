@@ -1,0 +1,190 @@
+page {
+  background-color: #f7f8fa;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  padding-bottom: 150rpx;
+  border-top: 2rpx solid #f2f2f2;
+}
+.container .store {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20rpx 32rpx;
+  box-sizing: border-box;
+}
+.container .store image {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 8rpx;
+}
+.container .store .r_img {
+  flex: 1;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.container .store .r_img .text {
+  font-size: 28rpx;
+  color: #333333;
+}
+.container .scroll_view_H {
+  background-color: #fff;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.container .scroll_view_H .images {
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f9f9f9;
+}
+.container .scroll_view_H .images image {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+.container .store_name {
+  width: 100%;
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.container .store_name .titl_name {
+  width: 100%;
+  padding-bottom: 32rpx;
+  box-sizing: border-box;
+}
+.container .store_name .boxman {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container .store_name .boxman .man {
+  flex: 1;
+  padding: 20rpx 32rpx;
+  box-sizing: border-box;
+  background-color: #f7f8fa;
+  border-radius: 52rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .store_name .boxman .man image {
+  width: 56rpx;
+  height: 56rpx;
+}
+.container .store_name .boxman .man .publish_name {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+.container .store_name .boxman .man3 {
+  margin-left: 16rpx;
+}
+.container .store_name .boxman .man2 {
+  margin-right: 16rpx;
+}
+.container .store_name .boxman .activesMan {
+  background-color: #fff0e6;
+  border: 2rpx solid #ffbb99;
+}
+.container .store_name .boxman .activesMan .publish_name {
+  color: #FF742F;
+}
+.container .store_name .uploader_img {
+  margin-top: 30rpx;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.container .store_name .uploader_img .upAdd {
+  width: 160rpx;
+  height: 160rpx;
+  border: 1rpx dashed #666666;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rpx;
+}
+.container .store_name .uploader_img .upAdd image {
+  width: 66rpx;
+  height: 66rpx;
+}
+.container .store_name .uploader_img .uploader_list {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 10rpx 5rpx;
+  position: relative;
+}
+.container .store_name .uploader_img .uploader_list .pictures {
+  width: 160rpx;
+  height: 160rpx;
+}
+.container .store_name .uploader_img .uploader_list .delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32rpx;
+  height: 32rpx;
+}
+.container .pub {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-top: 20rpx;
+  height: 300rpx;
+  position: relative;
+}
+.container .pub .down_mun {
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  z-index: 5;
+}
+.container .pub .down_mun .bos {
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: right;
+  color: #999999;
+  line-height: 34rpx;
+}
+.container .pub .textarea_text {
+  font-size: 24rpx;
+  color: #999999;
+}
+.container .pub textarea {
+  width: 100%;
+  height: 100%;
+}
+.container .downbtn {
+  width: 100%;
+  background-color: #fff;
+  padding: 0 64rpx;
+  box-sizing: border-box;
+  margin-top: 48rpx;
+}
+.container .downbtn .btn {
+  width: 620rpx;
+  height: 80rpx;
+  margin: 10rpx 0;
+  line-height: 80rpx;
+  padding: 0;
+  font-weight: 400;
+  font-size: 28rpx;
+  background: linear-gradient(136deg, #ff9116 15%, #ff6c03 82%);
+  border-radius: 48rpx;
+  color: #fff;
+}

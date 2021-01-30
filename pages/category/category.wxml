@@ -1,0 +1,45 @@
+<view class="container">
+  <form catchsubmit="formSubmit">
+    <view class="cat">
+      <navigator url="/pages/search/search" class="search">
+        <image src="{{imagesUrl}}/image04.png" class="imgsion"></image>
+        <input type="text" placeholder="请搜索关键字"></input>
+      </navigator>
+      <button class="search_btn" style="width:150rpx!important ; font-weight:400" formType="submit">
+        搜索
+      </button>
+    </view>
+  </form>
+  <view class="category_menu">
+    <view class="left_box">
+      <scroll-view class="left_menu" scroll-y="true">
+        <view class="menu_item" wx:for="{{category}}" wx:key="index" wx:for-index="index" wx:for-item="item" bindtap="itemTap" data-index="{{index}}">
+          <view class="fu_item_red  {{index==  currentIndex? 'active' :''}}">
+            <view class="res_item"></view>
+            <view class="fu_item ">{{item.name}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="right_box">
+      <scroll-view class="right_menu" scroll-y="true" scroll-top="{{scroll_top}}">
+        <block wx:if="{{cateList.length != 0}}">
+          <view class="category">
+            <block wx:for="{{cateList}}" wx:key="index1" wx:for-index="index1" wx:for-item="item1">
+              <view class="category_list" bindtap="goBusiness" data-item="{{item1.name}}">
+                <image src="{{item1.image}}" class="imgae"></image>
+                <view class="item_name">{{item1.name}}</view>
+              </view>
+            </block>
+          </view>
+        </block>
+        <view class="cno" wx:else>
+          <view class="kongbox">
+            <image src="{{imagesUrl}}/empty.png" />
+            <view class="c_name">暂无数据</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

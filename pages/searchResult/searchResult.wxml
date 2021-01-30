@@ -1,0 +1,69 @@
+<view class="container">
+  <view class="search">
+    <image src="{{imagesUrl}}/image04.png"></image>
+    <input type="text" placeholder="请搜索关键字" value="{{searchValue}}" confirm-type="search" bindconfirm="searchInput"></input>
+  </view>
+  <view class="tabbers">
+    <view class="tab01  {{sort == 1?'active':''}}" bindtap="FinalPriorities">综合排序</view>
+    <view class="tab01  {{sort == 2?'active':''}}" bindtap="pricePriorities">
+      <view class="tabName">价格</view>
+      <image src="{{imagesUrl}}/icon_paixu1@2x.png" wx:if="{{sort != 2}}" />
+      <image src="{{imagesUrl}}/icon_paixu2@2x.png" wx:if="{{order == 1 && sort ==2}}" />
+      <image src="{{imagesUrl}}/icon_paixu3@2x.png" wx:if="{{order == 2 && sort ==2}}" />
+    </view>
+    <view class="tab01  {{sort == 3?'active':''}}" bindtap="salesPriorities">
+      <view class="tabName">销量</view>
+      <image src="{{imagesUrl}}/icon_paixu1@2x.png" wx:if="{{sort!= 3}}" />
+      <image src="{{imagesUrl}}/icon_paixu2@2x.png" wx:if="{{order == 1 && sort ==3}}" />
+      <image src="{{imagesUrl}}/icon_paixu3@2x.png" wx:if="{{order == 2 && sort ==3}}" />
+    </view>
+    <view class="tab01  {{sort == 4?'active':''}}" bindtap="starPriorities">明星产品</view>
+  </view>
+  <view class="searchResult" wx:if="{{searchList.length !=0}}">
+    <view class="resultlist width686">
+      <block wx:for="{{searchList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <view class="resultitem" bindtap="navtoshopdetail" data-id="{{item.id}}">
+          <image src="{{item.image}}" mode=""></image>
+          <view class="right">
+            <view class="title  title_content1">{{item.name}}</view>
+            <view class="price">
+              <view class="shale">月售{{item.sales}}</view>
+            </view>
+            <view class="goodsbox">
+              <block wx:for="{{item.litestore_goods}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+                <view class="goodsitem" catchtap="goDetails" data-goods_id="{{item1.goods_id}}" data-settled_id="{{item1.settled_id}}">
+                  <image src="{{item1.image}}" mode=""></image>
+                  <view class="goodscontent ">{{item1.goods_name}}</view>
+                  <view style="color: #F5222D;font-weight: 600;font-size: 24rpx;" class="pt">
+                    <view class="pt_icon">￥</view>
+                    <view class="pt_price">{{item1.goods_price}}</view>
+                  </view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="cno" wx:else>
+    <view class="kongbox">
+      <image src="{{imagesUrl}}/empty.png" />
+      <view class="c_name">暂无相关数据</view>
+    </view>
+  </view>
+  <view class="width686 hotbox">
+    <view class="hottitle">推荐商家</view>
+    <block wx:for="{{recommend}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+      <view class="homtlist" bindtap="navtoshopdetail" data-id="{{item.id}}">
+        <image src="{{item.image}}" mode=""></image>
+        <view class="right">
+          <view class="title_content1">{{item.name}}</view>
+          <view>已售 {{item.sales}}</view>
+          <view wx:if="{{item.is_hot == 1}}">热卖抢购</view>
+          <view class="title_content1">{{item.manage}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

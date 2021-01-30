@@ -1,0 +1,136 @@
+<view class="container">
+  <view class="header" style="padding-top:{{statusTop}}px">
+    <view class="title">伙界商城</view>
+    <view class="searchbox">
+      <image class="pic" src="{{imagesUrl}}/image02.png" mode="" bindtap="RichScan"></image>
+      <view class="searchinput" bindtap="goSearch">
+        <image class="searchicon" src="{{imagesUrl}}/image04.png" mode=""></image>
+        <input bindinput="navtosearch" type="text" placeholder="搜索您想要的商品" placeholder-style="color:#C8C9CC;font-size:28rpx" value="" />
+      </view>
+    </view>
+  </view>
+  <view class="banner banertwo" style="height:320rpx;">
+    <swiper class="swiper" autoplay="{{autoplay}}" :interval="3000" :duration="1000" circular='{{circular}}' bindchange="swiperChanged">
+      <swiper-item wx:for="{{banner_list}}" wx:for-item="x" wx:for-index="i" wx:key="i" bindtap="swiperChange" data-it="{{x}}">
+        <image class="bannerpic" src="{{x.image}}" mode=""></image>
+      </swiper-item>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{banner_list}}" wx:for-item="x" wx:for-index="i" wx:key="i">
+        <view class="dot  {{i == currentSwiper ? 'active' : ''}} "></view>
+      </block>
+    </view>
+  </view>
+  <view class="index_classify_box">
+    <swiper class="swiper" indicator-color="{{indicator}}" indicator-active-color="{{indicatorActive}}" circular='{{circular}}' indicator-dots="{{indicatorDots}}">
+      <swiper-item>
+        <view class="swiper_item">
+          <block wx:if="{{index < 10}}" wx:for="{{sort_list}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+            <view class="swiper_item_view" catchtap="swiperChange2" data-index="{{index}}">
+              <image class="swiper_img" src="{{item.image}}"></image>
+              <view class="item_name">{{item.name}}</view>
+            </view>
+          </block>
+        </view>
+      </swiper-item>
+      <swiper-item wx:if="{{sort_list.length > 10}}">
+        <view class="swiper_item">
+          <block wx:if="{{index >= 10 && index < 20}}" wx:for="{{sort_list}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+            <view class="swiper_item_view" catchtap="swiperChange2" data-index="{{index}}">
+              <image class="swiper_img" src="{{item.image}}"></image>
+              <view class="item_name">{{item.name}}</view>
+            </view>
+          </block>
+        </view>
+      </swiper-item>
+      <swiper-item wx:if="{{sort_list.length > 20}}">
+        <view class="swiper_item">
+          <block wx:if="{{index >= 20 && index < 30}}" wx:for="{{sort_list}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+            <view class="swiper_item_view" catchchange="swiperChange2" data-index="{{index}}">
+              <image class="swiper_img" src="{{item.image}}"></image>
+              <view class="item_name">{{item.name}}</view>
+            </view>
+          </block>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="homebost">
+    <view class="width686" style="margin-top: 30rpx;">
+      <swiper class="swiper" autoplay="{{autoplay}}" interval="{{autoTime}}" :duration="1000" circular='{{circular}}' bindchange="swiperChange">
+        <swiper-item wx:for="{{index_banner}}" wx:for-item="x" wx:for-index="i" wx:key="i">
+          <image class="bannerpic" src="{{x}}" mode=""></image>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="width686 hotlist">
+      <view class="hottitle">
+        <view class="hot_a">热卖抢购</view>
+        <view class="hot_b" bindtap="goHotStore">更多></view>
+      </view>
+      <view class="w_list">
+        <block wx:for="{{hotList}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+          <view class="hotitem" catchtap="goDetails" data-id="{{item.goods_id}}" data-settled_id="{{item.settled_id}}">
+            <image class="itempic" src="{{item.image}}" mode=""></image>
+            <view class="itemcontent  title_content2 ">{{item.goods_name}}</view>
+            <view class="itempricebox">
+              <view class="pt">
+                <view class="pt_icon">￥</view>
+                <view class="pt_price">{{item.goods_price}}</view>
+              </view>
+              <view class="priceright">满{{item.store_full.total}}减{{item.store_full.minus}}</view>
+            </view>
+          </view>
+        </block>
+        <view class="no_more" wx:if="{{no_more}}">没有更多数据了哦~~</view>
+      </view>
+      <view style="clear: both;"></view>
+    </view>
+  </view>
+  <view class="popup" wx:if="{{showpopup }}" catchtouchmove="consume" catchtap="clickpupItem">
+    <view class="popupbox">
+      <view class="imagebox">
+        <image src="{{activity_img}}" class="i_imagel" />
+        <image class="i_image2" catchtap="clickpupItem" src="{{imagesUrl}}/image03.png" mode=""></image>
+      </view>
+      <view class="poptitle">{{activity_title}}</view>
+      <view class="popcontent">
+        <view>{{couponIMG.description}}</view>
+        <view style="display: flex; align-items : baseline">
+          <view class="icon" style="font-size: 46rpx;">￥</view>
+          <view class="icon" style="font-size: 64rpx;">{{couponIMG.money}}</view>
+        </view>
+      </view>
+      <view class="popbtn" catchtap="closepopup">立即领取</view>
+    </view>
+  </view>
+  <view class="popusp" wx:if="{{showpopupa }}" catchtouchmove="consume" catchtap="itemlodked">
+    <view class="copom_list">
+      <view class="tio_img">
+        <image src="{{activity.image}}" />
+        <image src="../../static/image/icon_a.png" class="items_etr" catchtap="itemlodked" />
+      </view>
+      <view class="top_top_tile">
+        <view class="t_name">{{activity.title}}</view>
+      </view>
+      <view class="bos_items">
+        <scroll-view scroll-y="true" style="max-height : 500rpx">
+          <block wx:for="{{actPon}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+            <view class="lite">
+              <view class="ind">
+                <view class="stor_name ">{{item.name}}</view>
+                <view class="stor_name other" wx:if="{{item.type != 1}}">
+                  满{{item.min}}减{{item.minus}}
+                </view>
+                <view class="stor_name other" wx:if="{{item.type == 1}}">
+                  {{item.min}}抵{{item.minus}}
+                </view>
+              </view>
+              <view class="store_btn" catchtap="drawCoupon" data-id="{{item.id}}">领取</view>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

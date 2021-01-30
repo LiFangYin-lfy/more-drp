@@ -1,0 +1,204 @@
+<view class="container">
+  <view class="top_img">
+    <swiper class="banner" indicator-dots indicator-color="rgba(255, 255, 255, 0.6)" indicator-active-color="#fff" interval="{{interval}}" circular="true" autoplay="{{autoplay}}">
+      <block wx:for="{{storeList.images_arr}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+        <swiper-item>
+          <image src="{{item}}" mode="aspectFill" bindload="{{index == 0 ? 'imageLoad' : ''}}" data-src='{{item}}' data-list='{{storeList.images_arr}}' bindtap="previewImage"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="box_title">
+    <view class="store_title">
+      <view class="titl  title_content1">{{storeList.name}}</view>
+      <view class="tit_img">
+        <button open-type="share" class="shareButton"></button>
+        <image src="{{imagesUrl}}/icon_share@2x.png" />
+        <view class="title_name">分享</view>
+      </view>
+    </view>
+    <view class="yinTime">营业时间 {{storeList.sales_date}}</view>
+    <view class="boxs">
+      <block wx:for="{{storeList.keyword}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+        <view class="texts">{{item}}</view>
+      </block>
+    </view>
+    <view class="address">
+      <view class="left  title_content2">{{storeList.address}}</view>
+      <view class="phone" bindtap="makePhoneCall" data-call="{{storeList.mobile}}">
+        <image src="{{imagesUrl}}/icon_call@2x.png" />
+        <view class="phone_name">电话</view>
+      </view>
+    </view>
+  </view>
+  <view class="Preferential">
+    <view class="per_name">优惠</view>
+    <!-- <scroll-view class="scroll_view_H" scroll-x="true" style="width:750rpx;"> -->
+    <view class="per_rigt">
+      <block wx:for="{{store_full}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+        <view class="texts">满{{item.total}}减{{item.minus}}</view>
+      </block>
+    </view>
+    <!-- </scroll-view> -->
+  </view>
+  <view class="category_menu">
+    <scroll-view class="left_menu" scroll-y="true">
+      <view class="menu_item" wx:for="{{sort_list}}" wx:key="index" wx:for-index="index" wx:for-item="item" bindtap="itemTap" data-index="{{index}}">
+        <view class="fu_item_red  {{index == currentIndex? 'active' :''}}">
+          <view class="res_item"></view>
+          <view class="fu_item ">{{item.name}}</view>
+          <view class="yellow" wx:if="{{item.num !=0}}">{{item.num}}</view>
+        </view>
+      </view>
+    </scroll-view>
+    <scroll-view class="right_menu" scroll-y="true" scroll-top="{{scroll_top}}">
+      <block wx:if="{{cateList.length != 0}}">
+        <view class="category">
+          <block wx:for="{{cateList}}" wx:key="indexa" wx:for-index="indexa" wx:for-item="itema">
+            <view class="stores" catchtap="goDetails" data-goods_id="{{itema.goods_id}}" data-settled_id="{{itema.settled_id}}">
+              <image src="{{itema.image}}" class="storeimg" />
+              <view class="stores_right">
+                <view class="title  title_content2">{{itema.goods_name}}</view>
+                <view class="month">月售{{itema.goods_sales}}</view>
+                <view class="dowm">
+                  <view class="pt">
+                    <view class="pt_icon">￥</view>
+                    <view class="pt_price">{{itema.goods_price}}</view>
+                  </view>
+                  <image src="{{imagesUrl}}/icon_add@2x.png" catchtap="addStore" data-itema="{{itema}}" />
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+      <view class="cno" wx:else>
+        <view class="kongbox">
+          <image src="{{imagesUrl}}/empty.png" />
+          <view class="c_name">暂无数据</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="box_buy">
+    <view class="kefu">
+      <view class="listen">
+        <button open-type="contact" class="buttonShare"></button>
+        <image class="img1" src="{{imagesUrl}}/icon_kefu@2x.png"></image>
+        <view class="listen_name">客服</view>
+      </view>
+      <view class="listen" bindtap="toggleDialog">
+        <image class="img1" src="{{imagesUrl}}/icon_car@2x.png" />
+        <view class="listen_name">购物车</view>
+        <view class="count" wx:if="{{total_num >0}}">{{total_num}}</view>
+      </view>
+    </view>
+    <view class="buy">
+      <button class="btn1 bind" bindtap="addShopCart" data-way="0">加入购物车</button>
+      <button class="btn2 bind" bindtap="addShopCart" data-way="1">立刻购买</button>
+    </view>
+  </view>
+  <!-- 屏幕背景变暗的背景 -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!-- 弹出框 -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="top">
+      <view class="buyStore">
+        <view class="storeImg">
+          <image src="{{itemStore.image}}" />
+        </view>
+        <view class="store_cont">
+          <view class="right_">
+            <view class="pt">
+              <text class="money_icon">¥</text>
+              <text class="price_big" wx:if="{{spec_type==20}}">{{newPrice}}</text>
+              <text class="price_big" wx:if="{{spec_type==10}}">{{itemStore.goods_price}}</text>
+            </view>
+            <image src="{{imagesUrl}}/updown2.png" bindtap="hideModal" />
+          </view>
+          <view class="store  title_content2 ">{{itemStore.goods_name}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 规格 -->
+    <view class="cond">
+      <scroll-view scroll-y class="scroll_h">
+        <view class="rules_scroll">
+          <block wx:for="{{spec_attr}}" wx:key="index0" wx:for-index="index0" wx:for-item="item0">
+            <view class="left_more">
+              <view class="guimore">{{item0.group_name}}</view>
+              <view class="change_more">
+                <block wx:for="{{item0.spec_items}}" wx:key="index1" wx:for-index="index1" wx:for-item="item1">
+                  <view class="down {{item1.is_cloose == 1? 'actived':''}}" bindtap="onclickSelected" data-index1="{{index1}}" data-index0="{{index0}}">
+                    <view class="downName">{{item1.spec_value}}</view>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </block>
+        </view>
+        <!-- 数量 -->
+        <view class="number">
+          <view class="left_num">购买数量</view>
+          <view class="right_num">
+            <view class="jian_img itemImg_" bindtap="countMinus">
+              <image src="{{imagesUrl}}/jian.png" />
+            </view>
+            <view class="center_num  itemImg_">{{goods_num}}</view>
+            <view class="jia_img  itemImg_" bindtap="countPlus">
+              <image src="{{imagesUrl}}/jia.png" />
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="btnbuy">
+      <button wx:if="{{is_buy}}" class="btnbuy__" size="default" bindtap="payEmptyBuy">立即购买</button>
+      <button class="btnbuy__" size="default" bindtap="addSHOPStore" wx:else data-goods_id='{{itemStore.goods_id}}'>
+        加入购物车
+      </button>
+    </view>
+  </view>
+  <view class="background" wx:if="{{cartLength}}" bindtap="toggleDialog"></view>
+  <view class="downbox" wx:if="{{cartLength}}">
+    <view class="imgupdown" bindtap="toggleDialog">
+      <image src="{{imagesUrl}}/updown2.png" />
+    </view>
+    <scroll-view class="right_menu" scroll-y="true" scroll-top="{{scroll_top}}">
+      <view class="list_down">
+        <block wx:if="{{shopList.length !=0}}">
+          <block wx:for="{{shopList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+            <view class="downItem">
+              <image src="{{item.image}}" />
+              <view class="rg_t">
+                <view class="tex_t title_content2">
+                  {{item.goods_name + item.goods_sku.goods_attr}}
+                </view>
+                <view class="down_t">
+                  <view class="pt">
+                    <view class="pt_icon">￥</view>
+                    <view class="pt_price">{{item.goods_price}}</view>
+                  </view>
+                  <view class="countClick">
+                    <image src="{{imagesUrl}}/jian.png" catchtap="onclickdown" data-goods_id="{{item.goods_id}}" data-total_num="{{item.total_num}}" data-goods_sku_id="{{item.goods_sku_id}}" />
+                    <view class="numbers">{{item.total_num}}</view>
+                    <image src="{{imagesUrl}}/jia.png" catchtap="onclickup" data-goods_id="{{item.goods_id}}" data-goods_sku_id="{{item.goods_sku_id}}" />
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </block>
+        <view class="cno" wx:else>
+          <view class="kongbox">
+            <image src="{{imagesUrl}}/empty.png" />
+            <view class="c_name">暂无数据</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="btnbuy" wx:if="{{shopList.length !=0}}">
+      <button class="btnbuy__" size="default" bindtap="payconfirm">立即购买</button>
+    </view>
+  </view>
+</view>

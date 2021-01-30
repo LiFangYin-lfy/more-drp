@@ -1,0 +1,81 @@
+<view class="container">
+  <view class="bottom_scroll" scroll-x="true">
+    <view class="nav  " wx:for="{{nav_list}}" wx:key="index" bindtap='switchTap' data-index="{{index}}">
+      <view class="nav_tab  {{esl == index?'active':''}} ">{{item}}</view>
+    </view>
+  </view>
+  <view class="orderlist">
+    <block wx:if="{{orderList.length !=0}}">
+      <block wx:for="{{orderList}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+        <view class="lists" catchtap="godetailOrder" data-id="{{item.id}}">
+          <view class="top">
+            <view class="let_le">
+              <image src="{{item.store.image}}" />
+              <view class="top_name  title_content1">{{item.store.name}}</view>
+            </view>
+            <view class="status_name" wx:if="{{item.status == 1}}">待付款</view>
+            <view class="status_name" wx:if="{{item.status == 2}}">待使用</view>
+            <view class="status_name" wx:if="{{item.status == 3}}">待评价</view>
+            <view class="status_name" wx:if="{{item.status ==4}}">已完成</view>
+          </view>
+          <view wx:if="{{item.goods.length ==1 }}">
+            <block wx:for="{{item.goods}}" wx:key="index0" wx:for-index="index0" wx:for-item="item0">
+              <view class="top_content">
+                <image src="{{item0.image}}" />
+                <view class="right_content">
+                  <view class="title_name  title_content2">{{item0.goods_name}}</view>
+                  <view class="downlist">
+                    <view class="total_l">共{{item0.total_num}}件商品</view>
+                    <view class="total_l">应付金额：</view>
+                    <view class="pt">
+                      <view class="pt_icon">￥</view>
+                      <view class="pt_price">{{item.pay_price}}</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+          <view class="top_conten2t" wx:else>
+            <scroll-view class="scroll_view_H" scroll-x="true" style="width:100%;">
+              <view class="images">
+                <block wx:for="{{item.goods}}" wx:key="index1" wx:for-index="index1" wx:for-item="item1">
+                  <image src="{{item1.image}}" />
+                </block>
+              </view>
+            </scroll-view>
+            <view class="downlist">
+              <view class="total_l">共{{item.goods.length}}件商品</view>
+              <view class="total_l">应付金额：</view>
+              <view class="pt">
+                <view class="pt_icon">￥</view>
+                <view class="pt_price">{{item.total_price}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="state_btn">
+            <view class="btnname" catchtap="goPayOrder" data-id="{{item.id}}" wx:if="{{item.status == 1}}">
+              付款
+            </view>
+            <view class="btnname" style="margin-left : 20rpx" catchtap="cancellation" data-id="{{item.id}}" wx:if="{{item.status == 1}}">
+              取消订单
+            </view>
+            <view class="btnname" catchtap="lookticketnum" data-id="{{item.id}}" wx:if="{{item.status == 2}}">
+              查看券码
+            </view>
+            <view class="btnname" catchtap="goPostEvaluation" data-id="{{item.id}}" wx:if="{{item.status == 3}}">
+              评价
+            </view>
+            <view class="btnname btnname2" wx:if="{{item.status == 4}}"></view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <view class="cno" wx:else>
+      <view class="kongbox" wx:if="{{it_cloose== true}}">
+        <image src="{{imagesUrl}}/empty.png" />
+        <view class="c_name">暂无数据</view>
+      </view>
+    </view>
+  </view>
+</view>

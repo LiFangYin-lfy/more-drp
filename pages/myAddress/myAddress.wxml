@@ -1,0 +1,41 @@
+<view class="container">
+  <form action="" catchsubmit="formSubmit">
+    <view class="perName">
+      <label for="收货人" class="labels">收货人</label>
+      <input type="text" placeholder="请输入收货人姓名" value="{{address.name}}" placeholder-class="input_placeholder" class="input" name="name" />
+    </view>
+    <view class="perName public">
+      <label for="手机号码" class="labels">手机号码</label>
+      <input type="number" placeholder="请输入手机号码" maxlength="11" value="{{address.mobile}}" placeholder-class="input_placeholder" class="input" name="mobile" />
+    </view>
+    <view class="perName public">
+      <label for="所在地区" class="labels">所在地区</label>
+      <view class="change_4S">
+        <picker mode="region" value="{{area}}" class="pik" custom-item="" bindchange="bindRegionChange" name="area">
+          <view class="picker">
+            <view class="picker_1" wx:if="{{area !=''}}">{{area}}</view>
+            <view class="picker_2" wx:else>请选择所在地区</view>
+            <view class="rowimg">
+              <image src="{{imagesUrl}}/icon_more.png" />
+            </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="perName public">
+      <label for="详细地址" class="labels">详细地址</label>
+      <input type="text" placeholder="请输入详细地址" value="{{address.address}}" placeholder-class="input_placeholder" class="input" name="address" />
+    </view>
+    <view class="btnbuy">
+      <block wx:if="{{address.id == ''}}">
+        <button class="btnbuy__" size="default" formType="submit">保存并使用</button>
+      </block>
+      <view class="bep" wx:else>
+        <button class="btnbu2_ delbtn" size="default" bindtap="delAddress" data-id="{{address.id}}">
+          删除
+        </button>
+        <button class="btnbu2_ usebtn" size="default" formType="submit">保存并使用</button>
+      </view>
+    </view>
+  </form>
+</view>

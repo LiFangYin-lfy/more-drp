@@ -1,0 +1,51 @@
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="tb_position">
+      <view class="searchbox">
+        <view class="search">
+          <image class="icon" src="{{imagesUrl}}/image04.png" mode=""></image>
+          <input type="text" value="{{searchValue}}" confirm-type="search" bindinput="getInput" name="input" confirm-type="search" bindconfirm="searchInput" placeholder="请输入关键字" />
+          <image class="close" catchtap="clearsearchval" src="{{imagesUrl}}/updown.png" mode=""></image>
+        </view>
+        <button class="search_btn" style="width:150rpx!important ; font-weight:400" formType="submit">
+          搜索
+        </button>
+      </view>
+    </view>
+  </form>
+  <view wx:if="{{isshowhistory}}">
+    <view class="title">
+      <view>历史搜索</view>
+      <image bindtap="clearHistory" src="{{imagesUrl}}/image06.png" mode=""></image>
+    </view>
+    <view class="history">
+      <block wx:for="{{history}}" wx:for-item="item" wx:if="{{index < 12}}" wx:for-index="index" wx:key="index">
+        <view class="itemsearch" bindtap="gosearch" data-kw="{{item.keyword}}">
+          {{item.keyword}}
+        </view>
+      </block>
+    </view>
+    <view class="title">
+      <view>热门搜索</view>
+      <view></view>
+    </view>
+    <view class="history">
+      <block wx:for="{{hotList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <view class="itemsearch" bindtap="gosearch" data-kw="{{item.keyword}}">
+          {{item.keyword}}
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="width686" wx:if="{{isshowhistory == false}}">
+    <view class="thinklist">
+      <block wx:for="{{conjunction}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <view class="thinkitem" bindtap="gosearchItem" data-kw="{{item.search_name}}">
+          <image src="{{imagesUrl}}/search01.png" wx:if="{{item.type==2}}" mode=""></image>
+          <image src="{{imagesUrl}}/search02.png" wx:if="{{item.type==1}}" mode=""></image>
+          <view class="kele ">{{item.search_name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

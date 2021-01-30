@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="if_list">
+    <form action="" bindsubmit="submitForm">
+      <view class="tip">
+        <view class="list">
+          <view class="li_name">商家姓名</view>
+          <input type="text" disabled="{{disabled}}" value="{{settedInfo.name}}" placeholder-class="input_placeholder" placeholder="请输入您的商家姓名" name="name" />
+        </view>
+        <view class="list">
+          <view class="li_name">经营内容</view>
+          <input type="text" disabled="{{disabled}}" value="{{settedInfo.manage}}" placeholder-class="input_placeholder" placeholder="请输入经营内容" name="manage" />
+        </view>
+        <view class="list">
+          <view class="li_name">商家名称</view>
+          <input type="text" disabled="{{disabled}}" value="{{settedInfo.nickname}}" placeholder-class="input_placeholder" placeholder="请输入商家名称" name="nickname" />
+        </view>
+      </view>
+      <view class="uploaded">
+        <view class="up_title">请上传营业执照</view>
+        <view class='uploader_img'>
+          <view class='uploader_list' wx:for="{{imgList}}" wx:key="index" wx:for-item="item" wx:for-index='index'>
+            <image src='{{item}}' class="pictures" data-index="{{index}}" mode="scaleToFill" catchtap='previewImg1' />
+            <image class='delete' data-index="{{index}}" src='{{imagesUrl}}/updown.png' mode="widthFix" catchtap='deleteImg' />
+          </view>
+          <view class='upAdd' bindtap='chooseImg' wx:if='{{disabled==false}}'>
+            <image src='{{imagesUrl}}/xiangji.png' mode="widthFix" />
+          </view>
+        </view>
+      </view>
+      <view class="btnbuy">
+        <button class="btnbuy__" size="default" formType="submit" wx:if="{{settled_status == 0}}">
+          提交
+        </button>
+        <button class="btnbuy__" size="default" wx:if="{{settled_status == 1}}">待审核</button>
+        <button class="btnbuy__" size="default" wx:if="{{settled_status == 2}}">审核通过</button>
+        <button class="btnbuy__" size="default" wx:if="{{settled_status == 3}}">审核驳回</button>
+      </view>
+    </form>
+  </view>
+</view>

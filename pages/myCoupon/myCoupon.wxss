@@ -1,0 +1,161 @@
+page {
+  background-color: #f7f8fa;
+}
+.container {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.container .listIten {
+  width: 100%;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+}
+.container .listIten .top_li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+.container .listIten .top_li .lef_cont {
+  width: 250rpx;
+  height: 186rpx;
+  position: relative;
+}
+.container .listIten .top_li .lef_cont .ka_img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.container .listIten .top_li .lef_cont .ld {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 186rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.container .listIten .top_li .lef_cont .ld .pt {
+  display: flex;
+  align-items: baseline;
+}
+.container .listIten .top_li .lef_cont .ld .pt .pt_icon {
+  font-size: 42rpx;
+  color: #fff;
+}
+.container .listIten .top_li .lef_cont .ld .pt .pt_price {
+  font-size: 48rpx;
+  color: #fff;
+  font-weight: bold;
+}
+.container .listIten .top_li .lef_cont .ld .lef_name {
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #fff;
+}
+.container .listIten .top_li .rgt {
+  flex: 1;
+  padding: 5rpx 20rpx;
+  box-sizing: border-box;
+  height: 186rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container .listIten .top_li .rgt .r_title {
+  width: 100%;
+  font-size: 32rpx;
+  color: #232323;
+}
+.container .listIten .top_li .rgt .r_tim2 {
+  width: 100%;
+  font-size: 32rpx;
+  color: #323233;
+  font-weight: 600;
+}
+.container .listIten .top_li .rgt .lef_time {
+  width: 100%;
+  font-size: 24rpx;
+  color: #999999;
+  padding: 8rpx 0;
+  box-sizing: border-box;
+}
+.container .listIten .top_li .rgt .down_use {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container .listIten .top_li .rgt .down_use .r_use {
+  width: 180rpx;
+  border: 2px solid #ffbb99;
+  border-radius: 40px;
+  color: #FF742F;
+  text-align: center;
+  font-size: 28rpx;
+}
+.container .listIten .top_li .rgt .down_use .r_down {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 46rpx;
+}
+.container .listIten .top_li .rgt .down_use .r_down .r_text {
+  font-size: 24rpx;
+  color: #999999;
+}
+.container .listIten .top_li .rgt .down_use .r_down .imgbtn {
+  margin-left: 20rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.container .listIten .top_li .rgt .down_use .r_down .imgbtn image {
+  width: 100%;
+}
+.container .listIten .openlist {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.container .listIten .openlist .open_title {
+  font-size: 28rpx;
+  color: #232323;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+.container .listIten .openlist .opentext {
+  font-size: 24rpx;
+  color: #999999;
+}
+.container .elseList {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .elseList .kongbox {
+  width: 256rpx;
+  height: 336rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 300rpx auto;
+}
+.container .elseList .kongbox image {
+  width: 100%;
+  height: 256rpx;
+}
+.container .elseList .kongbox .c_name {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  color: #ccc;
+}

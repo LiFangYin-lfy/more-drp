@@ -1,0 +1,236 @@
+page {
+  background-color: #f7f8fa;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  padding-bottom: 150rpx;
+  border-top: 2rpx solid #f2f2f2;
+
+
+  .store {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    // background-color: #F7F8FA;
+    background-color: #fff;
+    padding: 20rpx 32rpx;
+    box-sizing: border-box;
+
+    image {
+      width: 128rpx;
+      height: 128rpx;
+      border-radius: 8rpx;
+    }
+
+    .r_img {
+      flex: 1;
+      padding-left: 20rpx;
+      box-sizing: border-box;
+
+      .text {
+        font-size: 28rpx;
+        color: #333333;
+      }
+
+    }
+
+  }
+
+  .scroll_view_H {
+    background-color: #fff;
+    padding: 0 32rpx;
+    box-sizing: border-box;
+
+    .images {
+      width: 750rpx;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding: 20rpx 0;
+      box-sizing: border-box;
+      border-bottom: 1rpx solid #f9f9f9;
+
+      image {
+        width: 128rpx;
+        height: 128rpx;
+        border-radius: 8rpx;
+        margin-right: 20rpx;
+        flex-shrink: 0;
+      }
+
+    }
+
+  }
+
+  .store_name {
+    width: 100%;
+    margin-top: 20rpx;
+    background-color: #fff;
+    padding: 32rpx;
+    box-sizing: border-box;
+
+    .titl_name {
+      width: 100%;
+      padding-bottom: 32rpx;
+      box-sizing: border-box;
+    }
+
+    .boxman {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+
+      .man {
+        flex: 1;
+        padding: 20rpx 32rpx;
+        box-sizing: border-box;
+        background-color: #f7f8fa;
+        border-radius: 52rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        image {
+          width: 56rpx;
+          height: 56rpx;
+        }
+
+        .publish_name {
+          margin-left: 20rpx;
+          font-size: 28rpx;
+          color: #999999;
+        }
+      }
+
+      .man3 {
+        margin-left: 16rpx;
+      }
+
+      .man2 {
+        margin-right: 16rpx;
+      }
+
+      .activesMan {
+        background-color: #fff0e6;
+        border: 2rpx solid #ffbb99;
+
+        .publish_name {
+          color: #FF742F;
+        }
+      }
+    }
+
+    .uploader_img {
+      margin-top: 30rpx;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .upAdd {
+        width: 160rpx;
+        height: 160rpx;
+        border: 1rpx dashed #666666;
+        border-radius: 8rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10rpx;
+
+        image {
+          width: 66rpx;
+          height: 66rpx;
+
+        }
+      }
+
+      .uploader_list {
+        width: 160rpx;
+        height: 160rpx;
+        margin: 10rpx 5rpx;
+        position: relative;
+
+        .pictures {
+          width: 160rpx;
+          height: 160rpx;
+          // border: 1rpx solid red;
+        }
+
+        .delete {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 32rpx;
+          height: 32rpx;
+        }
+      }
+    }
+  }
+
+  .pub {
+    width: 100%;
+    padding: 32rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-top: 20rpx;
+    height: 300rpx;
+    position: relative;
+
+    .down_mun {
+      position: absolute;
+      bottom: 20rpx;
+      right: 20rpx;
+      z-index: 5;
+
+      .bos {
+        font-size: 24rpx;
+        font-family: PingFangSC,
+          PingFangSC-Regular;
+        font-weight: 400;
+        text-align: right;
+        color: #999999;
+        line-height: 34rpx;
+      }
+    }
+
+
+    .textarea_text {
+      font-size: 24rpx;
+      color: #999999;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+  .downbtn {
+    width: 100%;
+    // position: fixed;
+    // bottom: 0;
+    // left: 0;
+    background-color: #fff;
+    padding: 0 64rpx;
+    box-sizing: border-box;
+    margin-top: 48rpx;
+
+    .btn {
+      width: 620rpx;
+      height: 80rpx;
+      margin: 10rpx 0;
+      line-height: 80rpx;
+      padding: 0;
+      font-weight: 400;
+      font-size: 28rpx;
+      background: linear-gradient(136deg, #ff9116 15%, #ff6c03 82%);
+      border-radius: 48rpx;
+      color: #fff
+    }
+  }
+}

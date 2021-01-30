@@ -1,0 +1,51 @@
+<view class="container">
+  <block wx:if="{{goodOrder.goods.length == 1}}">
+    <view class="store" wx:for="{{goodOrder.goods}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+      <image src="{{item.image}}" />
+      <view class="r_img">
+        <view class="text  title_content2">{{item.goods_name}}</view>
+        <view class="text  title_content1">{{item.goods_attr}}</view>
+      </view>
+    </view>
+  </block>
+  <scroll-view class="scroll_view_H" scroll-x="true" style="width:100%;" wx:else>
+    <view class="images">
+      <block wx:for="{{goodOrder.goods}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+        <image src="{{item.image}}" />
+      </block>
+    </view>
+  </scroll-view>
+  <view class="store_name">
+    <view class="titl_name">商品评价</view>
+    <view class="boxman">
+      <view class="man man2 {{man == 1? 'activesMan' :''}}" bindtap="facebook">
+        <image src="{{imagesUrl}}/image07.png" wx:if="{{man == 1}}" />
+        <image src="{{imagesUrl}}/image09.png" wx:else />
+        <view class="publish_name">满意</view>
+      </view>
+      <view class="man man3  {{man == 2? 'activesMan' :''}}" bindtap="facebook">
+        <image src="{{imagesUrl}}/image08.png" wx:if="{{man== 2}}" />
+        <image src="{{imagesUrl}}/image10.png" wx:else />
+        <view class="publish_name">不满意</view>
+      </view>
+    </view>
+    <view class='uploader_img'>
+      <view class='uploader_list' wx:for="{{imgUrl}}" wx:key="idnex1" wx:for-item="item1" wx:for-index='index1'>
+        <image src='{{item1}}' class="pictures" data-index="{{index}}" mode="scaleToFill" catchtap='previewImg1' />
+        <image class='delete' data-index="{{index1}}" data-i='{{index1}}' src='{{imagesUrl}}/updown.png' mode="widthFix" catchtap='deleteImg' />
+      </view>
+      <view class='upAdd' bindtap='chooseImg' data-i='{{index}}' wx:if='{{images.length < 10}}'>
+        <image src='{{imagesUrl}}/xiangji.png' mode="widthFix" />
+      </view>
+    </view>
+  </view>
+  <view class="pub">
+    <textarea placeholder-class='textarea_text' placeholder='商品满足你的期待吗？说说它的优点和美中不足的地方吧' bindinput="getContent" maxlength="300"></textarea>
+    <view class="down_mun">
+      <view class="bos">{{cursor}}/300</view>
+    </view>
+  </view>
+  <view class="downbtn">
+    <button class="btn" bindtap='publish'>发布</button>
+  </view>
+</view>

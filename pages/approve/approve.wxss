@@ -1,0 +1,114 @@
+page {
+  background-color: #f7f8fa;
+}
+.container {
+  width: 100%;
+  border-top: 1rpx solid #EBEDF0;
+  padding: 32rpx 0;
+  box-sizing: border-box;
+}
+.container .tip {
+  width: 100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.container .tip .list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid #EBEDF0;
+}
+.container .tip .list .li_name {
+  width: 120rpx;
+  font-size: 28rpx;
+  color: #323233;
+}
+.container .tip .list input {
+  flex: 1;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+}
+.container .tip .list .input_placeholder {
+  font-size: 28rpx;
+  color: #969799;
+}
+.container .tip .list:last-child {
+  border: none;
+}
+.container .uploaded {
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.container .uploaded .up_title {
+  width: 100%;
+  font-size: 28rpx;
+  color: #323233;
+}
+.container .uploaded .small_title {
+  padding: 20rpx 0;
+  color: #969799;
+  font-size: 24rpx;
+}
+.container .uploaded .uploader_img {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.container .uploaded .uploader_img .upAdd {
+  width: 160rpx;
+  height: 160rpx;
+  border: 1rpx dashed #666666;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rpx;
+}
+.container .uploaded .uploader_img .upAdd image {
+  width: 66rpx;
+  height: 66rpx;
+}
+.container .uploaded .uploader_img .uploader_list {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 10rpx 5rpx;
+  position: relative;
+}
+.container .uploaded .uploader_img .uploader_list .pictures {
+  width: 160rpx;
+  height: 160rpx;
+}
+.container .uploaded .uploader_img .uploader_list .delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32rpx;
+  height: 32rpx;
+}
+.container .btnbuy {
+  width: 750rpx;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10rpx 0;
+  background-color: #fff;
+}
+.container .btnbuy .btnbuy__ {
+  height: 88rpx;
+  width: 92%;
+  color: #fff;
+  line-height: 88rpx;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 28rpx;
+  background: linear-gradient(136deg, #ff9116 15%, #ff6c03 82%);
+  border-radius: 48px;
+}

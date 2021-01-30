@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="bigimg">
+    <image src="{{share_qrcode}}" mode="widthFix" />
+  </view>
+  <view class="butto">
+    <view class="lf" bindtap="grilimg">
+      <image src="{{imagesUrl}}/icon_quan02.png" />
+      <view class="name_lf">生成图片</view>
+    </view>
+    <view class="lf">
+      <button open-type="share" class="shareButton"></button>
+      <image src="{{imagesUrl}}/icon_zhuanfa.png" />
+      <view class="name_lf">转发赠送</view>
+    </view>
+  </view>
+  <view class="pip" wx:if="{{pipimage}}" catchtap="updownImg">
+    <view class="boxs">
+      <image src="{{share_qrcode}}" node="" bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveImg' class="image" />
+      <image src="{{imagesUrl}}/image03.png" class="updown" catchtap="updownImg" />
+    </view>
+    <view class="wenzis">长按保存图片</view>
+  </view>
+</view>

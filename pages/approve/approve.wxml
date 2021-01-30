@@ -1,0 +1,41 @@
+<view class="container">
+  <form action="" bindsubmit="submitForm">
+    <view class="tip">
+      <view class="list">
+        <view class="li_name">真实姓名</view>
+        <input type="text" disabled="{{readonly}}" placeholder-class="input_placeholder" placeholder="请输入您的真实姓名" name="realname" value="{{realname}}" />
+      </view>
+      <view class="list">
+        <view class="li_name">学校</view>
+        <input type="text" disabled="{{readonly}}" placeholder-class="input_placeholder" placeholder="请输入您的学校" name="school_name" value="{{school_name}}" />
+      </view>
+      <view class="list">
+        <view class="li_name">专业</view>
+        <input type="text" disabled="{{readonly}}" placeholder-class="input_placeholder" placeholder="请输入您的专业" name="profession_name" value="{{profession_name}}" />
+      </view>
+      <view class="list">
+        <view class="li_name">学生证号</view>
+        <input type="number" disabled="{{readonly}}" placeholder-class="input_placeholder" placeholder="请输入学生证号" name="number" value="{{number}}" />
+      </view>
+    </view>
+    <view class="uploaded">
+      <view class="up_title">请上传学生证照片</view>
+      <view class="small_title">(只有上传照片才会获赠优惠抵用券并且赠送股权福利)</view>
+      <view class='uploader_img'>
+        <view class='uploader_list' wx:for="{{imgurl}}" wx:key="index" wx:for-item="item" wx:for-index='index'>
+          <image src='{{item}}' class="pictures" data-index="{{index}}" mode="scaleToFill" catchtap='previewImg1' />
+          <image class='delete' data-index="{{index}}" src='{{imagesUrl}}/updown.png' mode="widthFix" catchtap='deleteImg' />
+        </view>
+        <view class='upAdd' bindtap='chooseImg' wx:if='{{imgurl.length ==0}}'>
+          <image src='{{imagesUrl}}/xiangji.png' mode="widthFix" />
+        </view>
+      </view>
+    </view>
+    <view class="btnbuy">
+      <button class="btnbuy__" size="default" formType="submit" wx:if="{{status==0}}">提交</button>
+      <button class="btnbuy__" size="default" wx:if="{{status==1}}">待审核</button>
+      <button class="btnbuy__" size="default" wx:if="{{status==2}}">审核通过</button>
+      <button class="btnbuy__" size="default" formType="submit" wx:if="{{status==3}}">重新提交</button>
+    </view>
+  </form>
+</view>

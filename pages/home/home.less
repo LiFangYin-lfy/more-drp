@@ -1,0 +1,525 @@
+	page {
+		background-color: #f8f8f8;
+	}
+
+	.container {
+		background-color: #FAFAFC;
+
+		view {
+			box-sizing: border-box;
+		}
+
+		.header {
+			background: linear-gradient(133deg, #f7bf00, #ed8b00 98%);
+			width: 100%;
+			z-index: 10;
+
+			.title {
+				width: 100%;
+				height: 88rpx;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				color: #fff;
+			}
+
+			.searchbox {
+				height: 108rpx;
+				width: 100%;
+				padding-left: 22rpx;
+				display: flex;
+				align-items: center;
+
+				.pic {
+					width: 68rpx;
+					height: 68rpx;
+				}
+
+				.searchinput {
+					margin-left: 14rpx;
+					display: flex;
+					align-items: center;
+					padding-left: 24rpx;
+					width: 614rpx;
+					height: 68rpx;
+					background-color: #FFFFFF;
+					border-radius: 4rpx;
+
+					.searchicon {
+						width: 28rpx;
+						height: 28rpx;
+
+						margin-right: 12rpx;
+					}
+
+					input {
+						font-size: 28rpx;
+					}
+
+				}
+
+			}
+		}
+
+		.banner {
+			width: 100%;
+			height: auto;
+			position: relative;
+
+			.swiper {
+				height: 100%;
+			}
+
+			.bannerpic {
+				width: 100%;
+				height: 320rpx;
+			}
+
+			.classbox {
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: 32rpx;
+
+				.classitem {
+					width: 18%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					margin: 10rpx 1%;
+
+					image {
+						width: 100%;
+						height: 135rpx;
+						flex: 0 0 auto;
+					}
+
+					view {
+						font-size: 28rpx;
+						color: #7D7E80;
+						padding: 5rpx 0;
+						box-sizing: border-box;
+					}
+
+				}
+			}
+
+			.dots {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				flex-direction: row;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 20rpx;
+				z-index: 2;
+			}
+
+			/*未选中时的小圆点样式 */
+			.dot {
+				width: 12rpx;
+				height: 12rpx;
+				border-radius: 50%;
+				margin-right: 20rpx;
+				background-color: rgba(255, 255, 255, .5);
+				// background-color: #ff0000;
+			}
+
+			/*选中以后的小圆点样式  */
+			.active {
+				width: 24rpx;
+				height: 12rpx;
+				border-radius: 10rpx;
+				background-color: white;
+				// background-color: #ffcccc;
+			}
+
+			/*未选中时的小圆点样式 2*/
+			.dot2 {
+				width: 16rpx;
+				height: 16rpx;
+				border-radius: 50%;
+				margin-right: 20rpx;
+				background-color: #D8D8D8;
+			}
+
+			/*选中以后的小圆点样式 2 */
+			.active2 {
+				width: 16rpx;
+				height: 16rpx;
+				border-radius: 8rpx;
+				background-color: #ED8900;
+			}
+
+		}
+
+		.index_classify_box {
+			width: 100%;
+			height: 480rpx;
+			// background-color: #fff;
+
+			.swiper {
+				width: 100%;
+				height: 100%;
+
+				.swiper_item {
+					display: flex;
+					flex-wrap: wrap;
+					margin-top: 32rpx;
+
+					.swiper_item_view {
+						width: 18%;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						margin: 10rpx 1%;
+
+						.swiper_img {
+							width: 100%;
+							height: 135rpx;
+							flex: 0 0 auto;
+						}
+
+						.item_name {
+							font-size: 28rpx;
+							color: #7D7E80;
+							padding: 5rpx 0;
+							box-sizing: border-box;
+						}
+					}
+
+				}
+			}
+		}
+
+
+
+		.homebost {
+			padding: 0 32rpx;
+			box-sizing: border-box;
+
+			.hotlist {
+				margin-bottom: 24rpx;
+
+				.hottitle {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					.hot_a {
+						font-size: 36rpx;
+						font-weight: 600;
+						position: relative;
+						text-indent: 20rpx;
+						color: #323233;
+						margin: 32rpx 0;
+
+						&::after {
+							content: '';
+							position: absolute;
+							left: 0;
+							top: 9rpx;
+							width: 8rpx;
+							height: 34rpx;
+							background: linear-gradient(137deg, #f7bf00 3%, #ed8b00 102%);
+							border-radius: 4rpx;
+						}
+					}
+
+					.hot_b {
+						font-size: 28rpx;
+						color: #333333;
+					}
+
+
+				}
+
+				.w_list {
+					width: 100%;
+					display: flex;
+					flex-wrap: wrap;
+
+					.hotitem {
+						width: 50%;
+						background-color: #FFFFFF;
+						border-radius: 26rpx;
+						box-sizing: border-box;
+						margin: 10rpx 0;
+
+
+						&:nth-child(2n + 1) {
+							padding-right: 10rpx;
+							box-sizing: border-box;
+						}
+
+						&:nth-child(2n) {
+							padding-left: 10rpx;
+							box-sizing: border-box;
+						}
+
+						.itempic {
+							width: 100%;
+							height: 332rpx;
+							border-radius: 8rpx;
+						}
+
+						.itemcontent {
+							width: 100%;
+							padding: 10rpx;
+							box-sizing: border-box;
+							font-size: 28rpx;
+							font-weight: 600;
+							color: #333333;
+						}
+
+						.itempricebox {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							width: 100%;
+							padding: 0 10rpx 24rpx;
+							box-sizing: border-box;
+
+							.pt {
+								display: flex;
+								align-items: baseline;
+
+								.pt_icon {
+									font-size: 22rpx;
+									color: #F5222D;
+								}
+
+								.pt_price {
+									font-size: 28rpx;
+									color: #F5222D;
+								}
+							}
+
+							.priceright {
+								min-width: 130rpx;
+								height: 36rpx;
+								background-color: #FFF0E6;
+								border-radius: 8rpx;
+								color: #FF6B06;
+								font-size: 24rpx;
+								line-height: 36rpx;
+								text-align: center;
+							}
+
+						}
+
+					}
+				}
+
+			}
+		}
+
+		.popup {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, .5);
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 8;
+		}
+
+		.popupbox {
+			width: 622rpx;
+			height: 615rpx;
+			background-color: #F97419;
+			border-radius: 16rpx;
+			overflow: hidden;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 10;
+
+			.imagebox {
+				width: 100%;
+				height: 225rpx;
+				position: relative;
+
+				.i_imagel {
+					width: 100%;
+					height: 225rpx;
+				}
+
+				.i_image2 {
+					position: absolute;
+					right: 20rpx;
+					top: 20rpx;
+					width: 44rpx;
+					height: 44rpx;
+					z-index: 20;
+
+				}
+
+
+			}
+
+
+
+			.poptitle {
+				font-size: 32rpx;
+				color: #FFFFFF;
+				font-weight: 600;
+				text-align: center;
+				margin: 24rpx auto;
+
+			}
+
+			.popcontent {
+				padding: 0 36rpx;
+				width: 540rpx;
+				height: 148rpx;
+				background: url('http://dsh_business.t.brotop.cn/assets/image/white_img.png') no-repeat;
+				background-size: 100% 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				font-weight: 600;
+				margin: 0 auto;
+
+				.icon {
+					color: #F5222D;
+				}
+			}
+
+			.popbtn {
+				margin: 30rpx auto 0;
+				text-align: center;
+				line-height: 88rpx;
+				color: #FFFFFF;
+				font-size: 28rpx;
+				width: 376rpx;
+				height: 88rpx;
+				background: linear-gradient(133deg, #f7bf00, #ff9600 98%);
+				border-radius: 46rpx;
+			}
+		}
+
+		.popusp {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, .5);
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 10;
+
+
+			.copom_list {
+				width: 622rpx;
+				// height: 700rpx;
+				background-color: #F97419;
+				border-radius: 16rpx;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 12;
+
+				.tio_img {
+					width: 100%;
+					height: 225rpx;
+					position: relative;
+
+					image {
+						width: 100%;
+						border-radius: 16rpx 16rpx 0 0;
+					}
+
+					.items_etr {
+						width: 32rpx;
+						height: 32rpx;
+						position: absolute;
+						top: 12rpx;
+						right: 12rpx;
+						z-index: 100;
+
+					}
+
+				}
+
+				.top_top_tile {
+					width: 100%;
+					height: 88rpx;
+
+					.t_name {
+						width: 100%;
+						font-size: 32rpx;
+						color: #FFFFFF;
+						font-weight: 600;
+						text-align: center;
+						line-height: 88rpx;
+					}
+				}
+
+				.bos_items {
+					width: 100%;
+					background-color: #F97419;
+					padding: 0 32rpx 32rpx;
+					box-sizing: border-box;
+
+
+					.lite {
+						width: 100%;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						width: 100%;
+						padding: 28rpx 32rpx;
+						box-sizing: border-box;
+						margin-bottom: 20rpx;
+						background: url('http://dsh_business.t.brotop.cn/assets/image/white_img.png') no-repeat;
+						background-size: 100% 100%;
+
+						.ind {
+							flex: 1;
+							display: flex;
+							// align-items: center;
+							justify-content: center;
+							flex-direction: column;
+
+
+							.stor_name {
+								font-size: 30rpx;
+								color: #323233;
+								font-weight: 600;
+							}
+
+							.other {
+								font-weight: 400;
+								margin-top: 10rpx;
+								font-size: 24rpx;
+							}
+
+						}
+
+						.store_btn {
+							width: 150rpx;
+							height: 68rpx;
+							background: linear-gradient(136deg, #ff9116 15%, #ff6c03 82%);
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							font-size: 28rpx;
+							color: #fff;
+							border-radius: 16rpx;
+							margin-left: 20rpx;
+
+						}
+
+					}
+				}
+
+			}
+		}
+	}

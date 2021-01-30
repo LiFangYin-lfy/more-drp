@@ -1,0 +1,242 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": true,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.2",
+  "appid": "wx759dce4fc68ec4b9",
+  "projectname": "%E5%A4%9A%E5%95%86%E6%88%B7",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "搜索",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "搜索结果",
+          "pathName": "pages/searchResult/searchResult",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "商品详情",
+          "pathName": "pages/searchResult/searchResult",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "商品详情",
+          "pathName": "pages/details/details",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/category/category",
+          "pathName": "pages/category/category",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "商家详情",
+          "pathName": "pages/detailStore/detailStore",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "订单",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/appraise/appraise",
+          "pathName": "pages/appraise/appraise",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "条款",
+          "pathName": "pages/clausePage/clausePage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "售后咨询",
+          "pathName": "pages/consulting/consulting",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "售后服务",
+          "pathName": "pages/myafterSales/myafterSales",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "商品详情",
+          "pathName": "pages/details/details",
+          "query": "goods_id=21&settled_id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "搜索结果",
+          "pathName": "pages/searchResult/searchResult",
+          "query": "kw=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/postEvaluation/postEvaluation",
+          "pathName": "pages/postEvaluation/postEvaluation",
+          "query": "id =41",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/catePage/catePage",
+          "pathName": "pages/catePage/catePage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/myStoreEnter/myStoreEnter",
+          "pathName": "pages/myStoreEnter/myStoreEnter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/detailStore/detailStore",
+          "pathName": "pages/detailStore/detailStore",
+          "query": "store_id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/user/user",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/catePage/catePage",
+          "pathName": "pages/catePage/catePage",
+          "query": "keyword=%E5%8F%AF%E4%B9%90&sort=1&order=1&page=1",
+          "scene": null
+        },
+        {
+          "name": "pages/catePage/catePage",
+          "pathName": "pages/catePage/catePage",
+          "query": "keyword=可乐&sort=1&order=1&page=1",
+          "scene": null
+        },
+        {
+          "name": "pages/catePage/catePage",
+          "pathName": "pages/catePage/catePage",
+          "query": "keyword=“可乐”&sort=1&order=1&page=1",
+          "scene": null
+        },
+        {
+          "name": "pages/detailStore/detailStore",
+          "pathName": "pages/detailStore/detailStore",
+          "query": "store_id=15",
+          "scene": null
+        },
+        {
+          "name": "pages/cancel/cancel",
+          "pathName": "pages/cancel/cancel",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

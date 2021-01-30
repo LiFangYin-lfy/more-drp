@@ -1,0 +1,31 @@
+<view class="container">
+  <block wx:if="{{myInergration.length !=0}}">
+    <block wx:for="{{four}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <view class="one_list">
+        <view class="one_title">
+          <view class="title_names">2020-01</view>
+          <view class="two_item">
+            <view class="itemList">
+              <view class="itemname">已购买商品数</view>
+              <view class="itemcount">0</view>
+            </view>
+            <view class="itemList">
+              <view class="itemname">获得积分数</view>
+              <view class="itemcount">0</view>
+            </view>
+            <view class="itemList">
+              <view class="itemname">使用积分数</view>
+              <view class="itemcount">0</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+  <view class="cno" wx:else>
+    <view class="kongbox">
+      <image src="{{imagesUrl}}/empty.png" />
+      <view class="c_name">敬请期待~~~</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,100 @@
+.container {
+  width: 100%;
+  padding: 10rpx 32rpx;
+  box-sizing: border-box;
+}
+.container .appraise {
+  width: 100%;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  border-top: 1rpx solid #f5f5f5;
+}
+.container .appraise .appraisitem {
+  width: 100%;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+.container .appraise .appraisitem .headimg {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container .appraise .appraisitem .headimg .heading {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+}
+.container .appraise .appraisitem .headimg .head_name {
+  flex: 1;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .appraise .appraisitem .headimg .head_name .left .name_t {
+  font-size: 28rpx;
+  color: #333333;
+}
+.container .appraise .appraisitem .headimg .head_name .left image {
+  width: 36rpx;
+  height: 36rpx;
+}
+.container .appraise .appraisitem .headimg .head_name .dates {
+  font-size: 24rpx;
+  color: #999999;
+}
+.container .appraise .appraisitem .app_text {
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.container .appraise .appraisitem .scroll_view_H .buyclassimgs {
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.container .appraise .appraisitem .scroll_view_H .buyclassimgs .imgzU {
+  margin-right: 15rpx;
+  width: 196rpx;
+  height: 196rpx;
+  flex-shrink: 0;
+}
+.container .appraise .appraisitem .scroll_view_H .buyclassimgs .imgzU image {
+  width: 100%;
+  border-radius: 8rpx;
+}
+.container .downText {
+  width: 100%;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: #999999;
+  font-size: 24rpx;
+}
+.container .cno {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .cno .kongbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 200rpx auto;
+}
+.container .cno .kongbox image {
+  width: 100%;
+  height: 450rpx;
+}
+.container .cno .kongbox .c_name {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  color: #ccc;
+}

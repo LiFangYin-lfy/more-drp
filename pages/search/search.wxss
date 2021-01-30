@@ -1,0 +1,121 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #F7F8FA;
+}
+.container {
+  width: 100%;
+}
+.container .tb_position {
+  width: 100%;
+  position: relative;
+}
+.container .tb_position .searchbox {
+  width: 100%;
+  padding: 0 0 0rpx 32rpx;
+  box-sizing: border-box;
+  height: 108rpx;
+  display: flex;
+  align-items: center;
+}
+.container .tb_position .searchbox .search {
+  flex: 1;
+  height: 68rpx;
+  padding-left: 32rpx;
+  border-radius: 4rpx;
+  background-color: #EEEEEE;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.container .tb_position .searchbox .search .icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 12rpx;
+}
+.container .tb_position .searchbox .search input {
+  flex: 1;
+  font-size: 28rpx;
+  color: #323233;
+}
+.container .tb_position .searchbox .search .close {
+  width: 32rpx;
+  height: 32rpx;
+  margin: 0 20rpx;
+}
+.container .tb_position .searchbox .search_btn {
+  width: 150rpx;
+  color: #AE7E55;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .tb_position .searchbox button {
+  padding: 8rpx 8rpx !important;
+}
+.container .title {
+  width: 100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 18rpx 0;
+}
+.container .title view {
+  font-size: 28rpx;
+  color: #7D7E80;
+}
+.container .title image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.container .history {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+}
+.container .history view {
+  margin-right: 16rpx;
+  margin-bottom: 16rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  background-color: #F7F8FA;
+  border-radius: 20rpx;
+  color: #323233;
+  font-size: 26rpx;
+  padding: 0 32rpx;
+}
+.container .width686 {
+  width: 100%;
+}
+.container .width686 .thinklist {
+  width: 100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.container .width686 .thinklist .thinkitem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #EBEDF0;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+.container .width686 .thinklist .thinkitem image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+}
+.container .width686 .thinklist .thinkitem .kele {
+  font-size: 28rpx;
+  color: #323233;
+}
+.container .width686 .thinklist .thinkitem .kele_ {
+  font-size: 28rpx;
+  color: #FF742F;
+}

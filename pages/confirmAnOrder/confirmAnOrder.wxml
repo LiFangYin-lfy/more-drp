@@ -1,0 +1,76 @@
+<view class="container">
+  <view class="box_list">
+    <view class="list">
+      <view class="title">{{store.name}}</view>
+      <block wx:for="{{goods_list}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <view class="lit_item">
+          <image src="{{item.image}}" alt="" />
+          <view class="rig_item">
+            <view class="text  title_content1">{{item.goods_name}}</view>
+            <view class="ch">{{item.goods_sku.goods_attr}}</view>
+            <view class="t_right">
+              <view class="pub">共{{item.total_num}}件商品</view>
+              <view class="pub">应付金额:</view>
+              <view class="pt">
+                <view class="pt_icon">￥</view>
+                <view class="pt_price">{{item.total_price }}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="phppoplist">
+    <view class="phppop">
+      <view class="l_1">总价</view>
+      <view class="  pt">
+        <view class="pt_icon">￥</view>
+        <view class="r_2">{{order_total_price}}</view>
+      </view>
+      <!-- <view class="r_2">{{order_total_price}}</view> -->
+    </view>
+    <view class="phppop" wx:if="{{full_minus !=0}}">
+      <view class="l_1">店铺满减</view>
+      <view class="  pt">
+        <view class="pt_icon">￥</view>
+        <view class="r_2">{{full_minus}}</view>
+      </view>
+      <!-- <view class="r_2">{{full_minus}}</view> -->
+    </view>
+    <view class="phppop" wx:if="{{use_coupon1 !=0}}">
+      <view class="l_1">抵扣券</view>
+      <view class="  pt">
+        <view class="pt_icon">￥</view>
+        <view class="r_2">{{use_coupon1}}</view>
+      </view>
+      <!-- <view class="r_2">{{use_coupon1}}</view> -->
+    </view>
+    <view class="phppop" wx:if="{{use_coupon2 !=0}}">
+      <view class="l_1">满减券</view>
+      <view class="  pt">
+        <view class="pt_icon">￥</view>
+        <view class="r_2">{{use_coupon2}}</view>
+      </view>
+      <!-- <view class="r_2">{{use_coupon2}}</view> -->
+    </view>
+    <view class="phppop" wx:if="{{use_coupon3 !=0}}">
+      <view class="l_1">店铺优惠券</view>
+      <view class="  pt">
+        <view class="pt_icon">￥</view>
+        <view class="r_2">{{use_coupon3}}</view>
+      </view>
+      <!-- <view class="r_2">{{use_coupon3}}</view> -->
+    </view>
+  </view>
+  <view class="btns">
+    <view class="fixed">
+      <view class="left_total  pt">
+        <view class="pt_icon">￥</view>
+        <view class="pt_price">{{order_pay_price}}</view>
+      </view>
+      <view class="left_pay" bindtap="payConfirmOrder" wx:if="{{type == 1}}">立即支付</view>
+      <view class="left_pay" bindtap="payConfirmOrded" wx:else>立即支付</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="container">
+  <block wx:if="{{appraiseList.length !=0}}">
+    <block wx:for="{{appraiseList}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+      <view class="appraise">
+        <view class="appraisitem">
+          <view class="headimg">
+            <image src="{{item.userc.avatar}}" class="heading" />
+            <view class="head_name">
+              <view class="left">
+                <view class="name_t">{{item.userc.nickname}}</view>
+                <image wx:if="{{item.comment_status==1}}" src="{{imagesUrl}}/image07.png" />
+                <image wx:if="{{item.comment_status==2}}" src="{{imagesUrl}}/image08.png" />
+              </view>
+              <view class="dates">{{item.comment_time}}</view>
+            </view>
+          </view>
+          <view class="app_text">{{item.comment}}</view>
+          <scroll-view class="scroll_view_H" scroll-x="true" style="width:100%;" bindscroll="scroll">
+            <view class="buyclassimgs">
+              <view class="imgzU" wx:for="{{item.comment_images}}" wx:key="index1" wx:for-index="index1" wx:for-item="item1">
+                <image catchtap="previewImg" data-list="{{item.comment_images}}" data-index="{{index}}" data-index1="{{index1}}" src="{{item1}}" />
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </block>
+  </block>
+  <!-- <view class="downText">没有更多了哦~</view> -->
+  <view class="cno" wx:else>
+    <view class="kongbox" wx:if="{{it_cloose == true}}">
+      <image src="{{imagesUrl}}/empty.png" />
+      <view class="c_name">没有更多了哦~</view>
+    </view>
+  </view>
+</view>

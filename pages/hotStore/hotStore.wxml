@@ -1,0 +1,32 @@
+<view class="container">
+  <form catchsubmit="formSubmit">
+    <view class="cat">
+      <navigator url="/pages/search/search" class="search">
+        <image src="{{imagesUrl}}/image04.png" class="imgsion"></image>
+        <input type="text" placeholder="请搜索关键字"></input>
+      </navigator>
+      <button class="search_btn" style="width:150rpx!important ; font-weight:400" formType="submit">
+        搜索
+      </button>
+    </view>
+  </form>
+  <view class="hotList">
+    <block wx:for="{{hotList}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <view class="hotItem" catchtap="goDetails" data-id="{{item.goods_id}}" data-settled_id="{{item.settled_id}}">
+        <image src="{{item.image}}" class="itemImg" />
+        <view class="rgt">
+          <view class="hot1 title_content1">{{item.goods_name}}</view>
+          <view class="hot2  title_content1">已售{{item.goods_sales}}</view>
+          <view class="hot3  title_content1" wx:if="{{item.is_hot==1}}">热卖抢购</view>
+          <view class="hot4 pt  title_content1">
+            <view class="pt_icon">￥</view>
+            <view class="pt_price">{{item.goods_price}}</view>
+          </view>
+          <view class="hot5  title_content1">
+            <view class="coupon">满{{item.store_full.total}}减{{item.store_full.minus}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

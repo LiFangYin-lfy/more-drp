@@ -1,0 +1,233 @@
+page {
+  background-color: #F7F8FA;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.container .lists {
+  width: 100%;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 20rpx 32rpx;
+  box-sizing: border-box;
+}
+.container .lists .top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .lists .top .let_le {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.container .lists .top .let_le image {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+}
+.container .lists .top .let_le .top_name {
+  flex: 1;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+.container .lists .top .status_name {
+  width: 110rpx;
+  border-left: 1rpx solid #ccc;
+  color: #FF742F;
+  text-align: right;
+}
+.container .lists .top_content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f9f9f9;
+}
+.container .lists .top_content image {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 8rpx;
+}
+.container .lists .top_content .right_content {
+  flex: 1;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  height: 128rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .lists .top_content .right_content .title_name {
+  width: 100%;
+  font-size: 28rpx;
+  color: #333333;
+}
+.container .lists .top_content .right_content .downlist {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.container .lists .top_content .right_content .downlist .total_l {
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 30rpx;
+}
+.container .lists .top_content .right_content .downlist .pt {
+  display: flex;
+  align-items: baseline;
+}
+.container .lists .top_content .right_content .downlist .pt .pt_icon {
+  font-size: 22rpx;
+  color: #333333;
+}
+.container .lists .top_content .right_content .downlist .pt .pt_price {
+  font-size: 28rpx;
+  color: #333333;
+}
+.container .lists .top_conten2t {
+  width: 100%;
+}
+.container .lists .top_conten2t .scroll_view_H .images {
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f9f9f9;
+}
+.container .lists .top_conten2t .scroll_view_H .images image {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+.container .lists .top_conten2t .downlist {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.container .lists .top_conten2t .downlist .total_l {
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 30rpx;
+}
+.container .lists .top_conten2t .downlist .pt {
+  display: flex;
+  align-items: baseline;
+}
+.container .lists .top_conten2t .downlist .pt .pt_icon {
+  font-size: 22rpx;
+  color: #333333;
+}
+.container .lists .top_conten2t .downlist .pt .pt_price {
+  font-size: 28rpx;
+  color: #333333;
+}
+.container .lists .state_btn {
+  width: 100%;
+  padding: 20rpx 0 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.container .lists .state_btn .btnname {
+  color: #FFBB99;
+  font-size: 28rpx;
+  min-width: 120rpx;
+  border: 2rpx solid #FFBB99;
+  border-radius: 40px;
+  padding: 20rpx 32rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.container .lists .state_btn .btnname2 {
+  border: none;
+}
+.container .lists .inventory {
+  width: 100%;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.container .lists .inventory .box {
+  width: 100%;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.container .lists .inventory .box .le_name {
+  width: 130rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.container .lists .inventory .box .le_text {
+  flex: 1;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333333;
+}
+.container .lists .inventory .box .le_text image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 8rpx;
+}
+.container .lists .inventory .box .pt {
+  flex: 1;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: baseline;
+}
+.container .lists .inventory .box .pt .pt_icon {
+  font-size: 22rpx;
+  color: #333333;
+}
+.container .lists .inventory .box .pt .pt_price {
+  font-size: 28rpx;
+  color: #333333;
+}
+.container .lists .inventory .boz {
+  display: flex;
+}
+.container .lists .inventory .boxm {
+  display: flex;
+  align-items: center;
+}
+.container .lists .tnb {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+}
+.container .lists .tnb .btns_btn {
+  width: 100%;
+  padding: 16rpx 32rpx;
+  box-sizing: border-box;
+}
+.container .lists .tnb .btns_btn .cancel_btn {
+  width: 100%;
+  height: 88rpx;
+  background: linear-gradient(136deg, #ff9116 15%, #ff6c03 82%);
+  border-radius: 44rpx;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #fff;
+}

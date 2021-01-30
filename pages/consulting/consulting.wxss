@@ -1,0 +1,54 @@
+page {
+  background-color: #f7f8fa;
+}
+.container {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.container .user_name_4 {
+  background-color: #fff;
+  border-radius: 16rpx;
+  position: relative;
+}
+.container .user_name_4 .textarea {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+  height: 500rpx;
+  margin-bottom: 20rpx;
+}
+.container .user_name_4 .textarea_placeholder {
+  font-size: 28rpx;
+  color: #999999;
+}
+.container .user_name_4 .downs {
+  position: absolute;
+  bottom: 32rpx;
+  right: 32rpx;
+  z-index: 2;
+}
+.container .user_name_4 .downs .tet {
+  font-size: 28rpx;
+  color: #999999;
+}
+.container .btnbuy {
+  width: 750rpx;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10rpx 0;
+  background-color: #fff;
+}
+.container .btnbuy .btnbuy__ {
+  height: 88rpx;
+  width: 90%;
+  color: #fff;
+  line-height: 88rpx;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  background: linear-gradient(136deg, #ff9116 15%, #ff6c03 82%);
+  border-radius: 48rpx;
+  font-size: 28rpx;
+}

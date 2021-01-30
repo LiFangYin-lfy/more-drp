@@ -1,0 +1,19 @@
+<view class="container">
+  <block wx:for="{{rule}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <view class="one_list">
+      <view class="one_title">
+        <view class="title_names">{{item.name}}</view>
+        <block wx:for="{{item.rule}}" wx:for-index="index1" wx:for-item="item1" wx:key="index1">
+          <view class="two_item">
+            <view class="itemList" catchtap="onClickItem" data-index1="{{index1}}" data-index="{{index}}">
+              <view class="itemname">{{item1.title}}</view>
+              <image src="{{imagesUrl}}/downArrow.png" wx:if="{{item1.is_cloose == 0}}" />
+              <image src="{{imagesUrl}}/topArrow.png" wx:else />
+            </view>
+            <view class="itemtext" wx:if="{{item1.is_cloose == 1}}">{{item1.description}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="authorization">
+    <image class="img" src="{{imagesUrl}}/dunpai@2x.png" />
+  </view>
+  <view class="title">申请获得以下权限</view>
+  <view class="title_name">获得你的公开信息（昵称、头像等）</view>
+  <view class="bu">
+    <button class="btn" open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">立即授权</button>
+  </view>
+  <!-- 屏幕背景变暗的背景 -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!-- 弹出框 -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="phoneshou">
+      <view class="phone_title">请先授权手机号</view>
+      <view class="tips_content">为了更好的为你提供服务，请允许手机号授权</view>
+      <view class="downbtn">
+        <button class="btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+          手机号授权
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

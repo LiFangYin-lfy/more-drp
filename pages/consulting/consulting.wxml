@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="user_name_4">
+    <textarea class="textarea" placeholder="请输入您的内容" maxlength="200" placeholder-class="textarea_placeholder" value="{{explain}}" bindinput="getExplain" bindconfirm="getExplain"></textarea>
+    <view class="downs">
+      <view class="tet">{{cursor}}/200</view>
+    </view>
+  </view>
+  <view class="btnbuy">
+    <button class="btnbuy__" size="default" bindtap="submitback">提交留言</button>
+  </view>
+</view>

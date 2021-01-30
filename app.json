@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/category/category",
+    "pages/order/order",
+    "pages/user/user",
+    "pages/search/search",
+    "pages/searchResult/searchResult",
+    "pages/details/details",
+    "pages/appraise/appraise",
+    "pages/catePage/catePage",
+    "pages/detailStore/detailStore",
+    "pages/hotStore/hotStore",
+    "pages/lookticketnum/lookticketnum",
+    "pages/postEvaluation/postEvaluation",
+    "pages/integralRule/integralRule",
+    "pages/approve/approve",
+    "pages/myCoupon/myCoupon",
+    "pages/myIntegration/myIntegration",
+    "pages/myAddress/myAddress",
+    "pages/myStoreEnter/myStoreEnter",
+    "pages/myafterSales/myafterSales",
+    "pages/clausePage/clausePage",
+    "pages/consulting/consulting",
+    "pages/detailOrder/detailOrder",
+    "pages/authorization/authorization",
+    "pages/myStoreList/myStoreList",
+    "pages/confirmAnOrder/confirmAnOrder",
+    "pages/out/out",
+    "pages/cancel/cancel"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "多商户",
+    "enablePullDownRefresh": false,
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#9D9D9D",
+    "backgroundColor": "#fff",
+    "selectedColor": "#F19C00",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "/static/icon/icon_05.png",
+        "selectedIconPath": "/static/icon/icon_01.png"
+      },
+      {
+        "text": "分类",
+        "pagePath": "pages/category/category",
+        "iconPath": "/static/icon/icon_06.png",
+        "selectedIconPath": "/static/icon/icon_02.png"
+      },
+      {
+        "text": "订单",
+        "pagePath": "pages/order/order",
+        "iconPath": "/static/icon/icon_07.png",
+        "selectedIconPath": "/static/icon/icon_03.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/user/user",
+        "iconPath": "/static/icon/icon_08.png",
+        "selectedIconPath": "/static/icon/icon_04.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

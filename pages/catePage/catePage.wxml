@@ -1,0 +1,38 @@
+<view class="container">
+  <form catchsubmit="formSubmit">
+    <view class="cat">
+      <view class="search">
+        <image src="{{imagesUrl}}/image04.png" class="imgsion"></image>
+        <input type="text" placeholder="请输入关键字" confirm-type="search" bindinput="getInput" name="input" confirm-type="search" bindconfirm="searchInput"></input>
+      </view>
+      <button class="search_btn" style="width:150rpx!important ; font-weight:400" formType="submit">
+        搜索
+      </button>
+    </view>
+  </form>
+  <view class="catelist">
+    <block wx:if="{{cateList.length !=0}}">
+      <block wx:for="{{cateList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <view class="lists" bindtap="godetailStore" data-id="{{item.id}}">
+          <image src="{{item.image}}" class="listimg" />
+          <view class="list_rig">
+            <view class="li_title  title_content1">{{item.name}}</view>
+            <view class="li_titl2">已售{{item.sales}}</view>
+            <!-- catchtap="goHotStore" -->
+            <view class="li_titl3e" wx:if="{{item.is_hot == 1}}">热卖抢购</view>
+            <view class="li_titl2  title_content1">{{item.des}}热卖抢购</view>
+            <view class="li_titl3  title_content1">
+              <view class="c_name">满{{item.store_full.total}}减{{item.store_full.minus}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <view class="cno" wx:else>
+      <view class="kongbox">
+        <image src="{{imagesUrl}}/empty.png" />
+        <view class="c_name">暂无搜索到与{{keyword}}相关的数据</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="sales">
+    <view class="header" style="padding-top:{{statusTop}}px">
+      <!-- <view class="status_bar"></view> -->
+      <view class="title">
+        <view class="imgback" bindtap="goback">
+          <image src="{{imagesUrl}}/fffimg.png" class="back" />
+        </view>
+        <view class="bacjk">售后客服</view>
+      </view>
+    </view>
+    <view class="kefu">
+      <image src="{{imagesUrl}}/kefu.png" />
+      <view class="kefu_tie">你好，很高兴为您服务！</view>
+    </view>
+    <view class="stat_lis">
+      <view class="staues">
+        <view class="stautsItem" bindtap="goclausePage" data-state="1">
+          <image src="{{imagesUrl}}/icon_kefu_s_1@2x.png" />
+          <view class="itemname">支付方式</view>
+        </view>
+        <view class="stautsItem" bindtap="goclausePage" data-state="2">
+          <image src="{{imagesUrl}}/icon_kefu_s_2.png" />
+          <view class="itemname">投诉服务</view>
+        </view>
+        <view class="stautsItem">
+          <button open-type="contact" class="buttonShare"></button>
+          <image src="{{imagesUrl}}/icon_kefu_s_3.png" />
+          <view class="itemname">客服咨询</view>
+        </view>
+        <view class="stautsItem" bindtap="goConsulting">
+          <image src="{{imagesUrl}}/icon_kefu_s_4@2x.png" />
+          <view class="itemname">售后咨询</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="downlist">
+    <view class="iox">
+      <block wx:for="{{saleList}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <view class="itembtn" bindtap="goDifferentPage" data-index="{{index}}">{{item}}</view>
+      </block>
+    </view>
+  </view>
+</view>

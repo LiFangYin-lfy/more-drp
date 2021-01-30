@@ -1,0 +1,76 @@
+page {
+  background-color: #f7f8fa;
+}
+.container {
+  width: 100%;
+  border-top: 1rpx solid #EBEDF0;
+  padding: 32rpx 0;
+  box-sizing: border-box;
+}
+.container .else_list {
+  width: 100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.container .else_list .litItem {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  border-radius: 16rpx;
+}
+.container .else_list .litItem .top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container .else_list .litItem .top image {
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 8rpx;
+}
+.container .else_list .litItem .top .rgt {
+  flex: 1;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.container .else_list .litItem .top .rgt .title1 {
+  width: 100%;
+  font-size: 32rpx;
+  color: #323233;
+}
+.container .else_list .litItem .top .rgt .iims {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+.container .else_list .litItem .top .rgt .iims .lims {
+  margin: 0 5rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+.container .else_list .litItem .top .rgt .title3 {
+  font-size: 28rpx;
+  color: #969799;
+  width: 100%;
+}
+.container .else_list .litItem .bens {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container .else_list .litItem .bens .bens_name {
+  width: 160rpx;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  border: 2rpx solid #ffbb99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16rpx;
+  color: #FF742F;
+}

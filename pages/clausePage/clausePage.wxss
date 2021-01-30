@@ -1,0 +1,39 @@
+page {
+  background-color: #f7f8fa;
+}
+.container {
+  width: 100%;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.container .box {
+  width: 100%;
+  border-radius: 16rpx;
+  background-color: #fff;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+.container .box .title {
+  color: #333333;
+  font-size: 36rpx;
+  position: relative;
+  text-indent: 20rpx;
+  color: #323233;
+}
+.container .box .title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9rpx;
+  width: 8rpx;
+  height: 34rpx;
+  background: linear-gradient(137deg, #f7bf00 3%, #ed8b00 102%);
+  border-radius: 4rpx;
+}
+.container .box .content {
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 28rpx;
+  color: #3D444C;
+}
